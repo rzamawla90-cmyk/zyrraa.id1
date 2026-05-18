@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Zyrraa.id</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:white;
+  background:
+  linear-gradient(135deg,#120f1d,#241536,#3a2356);
+  position:relative;
+}
+
+/* GLOW */
+body::before,
+body::after{
+  content:"";
+  position:fixed;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(120px);
+  z-index:0;
+}
+
+body::before{
+  background:rgba(255,120,220,.18);
+  top:-120px;
+  left:-120px;
+}
+
+body::after{
+  background:rgba(170,120,255,.18);
+  bottom:-120px;
+  right:-120px;
+}
+
+/* PARTICLE */
+.particle{
+  position:fixed;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  background:white;
+  opacity:.5;
+  animation:float linear infinite;
+  z-index:1;
+}
+
+@keyframes float{
+  from{
+    transform:translateY(100vh);
+    opacity:0;
+  }
+
+  20%{
+    opacity:.6;
+  }
+
+  to{
+    transform:translateY(-100px);
+    opacity:0;
+  }
+}
+
+/* CONTAINER */
+.container{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px 70px;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+}
+
+/* LOGO */
+.logo{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  overflow:hidden;
+  margin-bottom:30px;
+
+  box-shadow:
+  0 0 40px rgba(201,155,255,.35),
+  0 0 80px rgba(255,155,220,.15);
+
+  border:2px solid rgba(255,255,255,.08);
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* TITLE */
+.hero h1{
+  font-size:58px;
+  line-height:1.1;
+  margin-bottom:14px;
+
+  background:linear-gradient(
+  90deg,
+  #ffd7f5,
+  #ffffff,
+  #d7c3ff
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+  max-width:650px;
+  color:rgba(255,255,255,.72);
+  font-size:16px;
+  line-height:1.8;
+}
+
+/* BUTTON */
+.buttons{
+  margin-top:35px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.btn{
+  padding:14px 28px;
+  border-radius:999px;
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  transition:.3s;
+  border:1px solid rgba(255,255,255,.12);
+
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(12px);
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  background:rgba(255,255,255,.14);
+}
+
+.btn.primary{
+  background:linear-gradient(
+  90deg,
+  #ff93d1,
+  #b388ff
+  );
+
+  border:none;
+}
+
+/* SECTION */
+.section{
+  margin-top:120px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.section-title p{
+  color:rgba(255,255,255,.65);
+}
+
+/* CARD */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);
+
+  padding:30px 25px;
+  border-radius:28px;
+
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  background:rgba(255,255,255,.1);
+}
+
+.card i{
+  font-size:28px;
+  margin-bottom:20px;
+
+  background:linear-gradient(
+  90deg,
+  #ffb6e8,
+  #cba8ff
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.card h3{
+  margin-bottom:10px;
+  font-size:18px;
+}
+
+.card p{
+  color:rgba(255,255,255,.68);
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* FOOTER */
+footer{
+  margin-top:100px;
+  padding:30px 20px;
+  text-align:center;
+  color:rgba(255,255,255,.55);
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .hero{
+    min-height:auto;
+    padding-top:70px;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .logo{
+    width:140px;
+    height:140px;
+  }
+
+  .section{
+    margin-top:90px;
+  }
+
+  .section-title h2{
+    font-size:28px;
+  }
+
+  .btn{
+    width:100%;
+    max-width:260px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- PARTICLE -->
+<script>
+for(let i=0;i<35;i++){
+
+  const p=document.createElement("div");
+
+  p.className="particle";
+
+  p.style.left=Math.random()*100+"vw";
+
+  p.style.animationDuration=
+  (Math.random()*8+6)+"s";
+
+  p.style.animationDelay=
+  Math.random()*-10+"s";
+
+  document.body.appendChild(p);
+}
+</script>
+
+<div class="container">
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="logo">
+      <img src="zyrraa.png" alt="Logo Zyrraa.id">
+    </div>
+
+    <h1>Zyrraa.id</h1>
+
+    <p>
+      Trusted | Fast Respons | Safe Payment .
+    </p>
+
+    <div class="buttons">
+
+      <a href=""
+      class="btn primary">
+      Hubungi Admin
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section">
+
+    <div class="section-title">
+
+      <h2>Tentang Zyrraa.id</h2>
+
+      <p>
+        Dibangun dengan visual modern dan nuansa elegan
+        untuk menghadirkan identitas digital yang lebih premium.
+      </p>
+
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <i class="fa-solid fa-crown"></i>
+
+        <h3>Premium Identity</h3>
+
+        <p>
+          Menggunakan konsep visual mewah dengan tampilan
+          modern yang clean dan nyaman dilihat.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="fa-solid fa-bolt"></i>
+
+        <h3>Fast Response</h3>
+
+        <p>
+          Mengutamakan komunikasi aktif dan respon cepat
+          untuk pengalaman yang lebih nyaman.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <i class="fa-solid fa-heart"></i>
+
+        <h3>Modern Community</h3>
+
+        <p>
+          Dibuat untuk membangun lingkungan digital yang aktif,
+          positif, dan lebih profesional.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Zyrraa.id — All Rights Reserved
+  </footer>
+
+</div>
+
+</body>
+</html>
